@@ -11,7 +11,7 @@ namespace textbasedAdventure
     internal class ShowHide
     {
         MainWindow mainWindow;
-        bool Continue = false;
+        public bool Continue = false;
         public ShowHide(MainWindow mainWindow)
         {
             this.mainWindow = mainWindow;

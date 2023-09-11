@@ -1,0 +1,86 @@
+﻿<Window x:Class="textbasedAdventure.WindowInfo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:textbasedAdventure"
+        WindowState="Maximized"
+        WindowStyle="None"
+        mc:Ignorable="d"
+        Title="WindowInfo" Height="900" Width="1600">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="2*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="3*" />
+            <RowDefinition Height="3*" />
+            <RowDefinition Height="3*" />
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="3*" />
+        </Grid.RowDefinitions>
+        
+        <Grid Grid.Row="5" Grid.ColumnSpan="4" Background="Gray">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <Button x:Name="btnOption1" Content="OPTION1" FontSize="25" Grid.Column="3" Grid.ColumnSpan="1" Grid.Row="1"/>
+            <Button x:Name="btnOption2" Content="OPTION2" FontSize="25" Grid.Column="3" Grid.ColumnSpan="1" Grid.Row="3"/>
+            <Button x:Name="btnShop" Content="SHOP" FontSize="25" Grid.Column="3" Grid.ColumnSpan="1" Grid.Row="5"/>
+        </Grid>
+        <Grid Grid.Column="5" Grid.RowSpan="5">
+            <Grid.Background>
+                <SolidColorBrush Color="LightGray"/>
+            </Grid.Background>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <TextBlock x:Name="txtUsername" Text="USERNAME:" FontSize="30" TextAlignment="Center" HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Column="0" Grid.Row="0" MouseEnter="txtUsername_MouseEnter" MouseLeave="txtUsername_MouseLeave"/>
+            <TextBlock Text="username" FontSize="30" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1"  Grid.Row="0"/>
+            <TextBlock x:Name="txtHp" Text="HEALTHPOINTS:" FontSize="30" TextAlignment="Center" HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Column="0"  Grid.Row="1" MouseEnter="txtHp_MouseEnter" MouseLeave="txtHp_MouseLeave"/>
+            <TextBlock Text="23/30" FontSize="30" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Grid.Row="1" />
+            <TextBlock x:Name="txtDam" Text="Damage:" FontSize="30" TextAlignment="Center" HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Column="0"  Grid.Row="2" MouseEnter="txtDam_MouseEnter" MouseLeave="txtDam_MouseLeave" />
+            <TextBlock Text="10" FontSize="30" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Grid.Row="2" />
+            <TextBlock x:Name="txtDef" Text="DEFENSE:" FontSize="30" TextAlignment="Center" HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Column="0"  Grid.Row="3" MouseEnter="txtDef_MouseEnter" MouseLeave="txtDef_MouseLeave"/>
+            <TextBlock Text="3" FontSize="30" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Grid.Row="3" />
+            <TextBlock x:Name="txtCoins" Text="GOLDEN COINS:" FontSize="30" TextAlignment="Center" HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Column="0"  Grid.Row="4" MouseEnter="txtCoins_MouseEnter" MouseLeave="txtCoins_MouseLeave"/>
+            <TextBlock Text="3" FontSize="30" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Grid.Row="4" />
+        </Grid>
+        <Grid Grid.ColumnSpan="3" Grid.RowSpan="4">
+            <Grid.Background>
+                <SolidColorBrush Color="white"/>
+            </Grid.Background>
+        </Grid>
+        <Grid Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3" Background="DarkGray">
+            <TextBlock x:Name="txtTutorial" Text="hover over something to know what it means" FontSize="30"/>
+        </Grid>
+        <Button x:Name="btnBack" Content="BACK TO MENU" FontSize="30" Click="btnBack_Click" />
+    </Grid>
+</Window>

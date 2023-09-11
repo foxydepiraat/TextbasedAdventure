@@ -49,6 +49,13 @@ namespace textbasedAdventure
             this.Close();
         }
 
+        private void btnInfo_Click(object sender, RoutedEventArgs e)
+        {
+            WindowInfo info = new WindowInfo();
+            info.Show();
+
+        }
+
         private void btnSaveFile1_Click(object sender, RoutedEventArgs e)
         { 
             if(showHide.Continue == false)
