@@ -41,9 +41,11 @@
                 <RowDefinition Height="2*"/>
                 <RowDefinition Height="1*"/>
             </Grid.RowDefinitions>
-            <Button x:Name="btnOption1" Content="OPTION1" FontSize="25" Grid.Column="3" Grid.ColumnSpan="1" Grid.Row="1"/>
-            <Button x:Name="btnOption2" Content="OPTION2" FontSize="25" Grid.Column="3" Grid.ColumnSpan="1" Grid.Row="3"/>
-            <Button x:Name="btnShop" Content="SHOP" FontSize="25" Grid.Column="3" Grid.ColumnSpan="1" Grid.Row="5"/>
+            <Button x:Name="btnOption1" Content="OPTION1" FontSize="25" Grid.Column="1" Grid.ColumnSpan="1" Grid.Row="1" MouseEnter="btnOption1_MouseEnter" MouseLeave="btnOption1_MouseLeave"/>
+            <Button x:Name="btnOption2" Content="OPTION2" FontSize="25" Grid.Column="1" Grid.ColumnSpan="1" Grid.Row="3" MouseEnter="btnOption2_MouseEnter" MouseLeave="btnOption2_MouseLeave"/>
+            <Button x:Name="btnOption3" Content="OPTION3" FontSize="25" Grid.Column="3" Grid.ColumnSpan="1" Grid.Row="1" MouseEnter="btnOption3_MouseEnter" MouseLeave="btnOption3_MouseLeave"/>
+            <Button x:Name="btnOption4" Content="OPTION4" FontSize="25" Grid.Column="3" Grid.ColumnSpan="1" Grid.Row="3" MouseEnter="btnOption4_MouseEnter" MouseLeave="btnOption4_MouseLeave"/>
+            <Button x:Name="btnShop" Content="SHOP" FontSize="25" Grid.Column="3" Grid.ColumnSpan="1" Grid.Row="5" MouseEnter="btnShop_MouseEnter" MouseLeave="btnShop_MouseLeave" Click="btnShop_Click"/>
         </Grid>
         <Grid Grid.Column="5" Grid.RowSpan="5">
             <Grid.Background>
@@ -79,8 +81,9 @@
             </Grid.Background>
         </Grid>
         <Grid Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3" Background="DarkGray">
-            <TextBlock x:Name="txtTutorial" Text="hover over something to know what it means" FontSize="30"/>
+            <TextBox x:Name="txtTutorial" Text="hover over something to know what it means" FontSize="25" IsReadOnly="True" TextWrapping="Wrap" MouseEnter="txtTutorial_MouseEnter" MouseLeave="txtTutorial_MouseLeave"/>
         </Grid>
         <Button x:Name="btnBack" Content="BACK TO MENU" FontSize="30" Click="btnBack_Click" />
+        <TextBlock x:Name="txtWin" Text="How to win/Complete the game" Grid.Column="1" Grid.Row="0" FontSize="30" MouseEnter="txtWin_MouseEnter" MouseLeave="txtWin_MouseLeave"/>
     </Grid>
 </Window>
