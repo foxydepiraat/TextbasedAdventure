@@ -58,6 +58,9 @@
     <Compile Include="Player.cs" />
     <Compile Include="ShowHide.cs" />
     <Compile Include="StartGame.cs" />
+    <Compile Include="txtAdventureGame.xaml.cs">
+      <DependentUpon>txtAdventureGame.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WindowInfo.xaml.cs">
       <DependentUpon>WindowInfo.xaml</DependentUpon>
     </Compile>
@@ -73,6 +76,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="txtAdventureGame.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="WindowInfo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

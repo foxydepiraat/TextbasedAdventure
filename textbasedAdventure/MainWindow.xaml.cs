@@ -22,9 +22,15 @@ namespace textbasedAdventure
     {
         ShowHide showHide;
         StartGame StartGame = new StartGame();
-        
-        int file = 0;
-        bool overwrite = false;
+
+
+        private int startHp = 20;
+        private int startMaxHp = 20;
+        private int startDam = 5;
+        private int startDef = 0;
+        private int startCoins = 0;
+        private int startPos = 1;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -62,11 +68,11 @@ namespace textbasedAdventure
             {
 
                 showHide.Overwrite();
-                file = 1;
+                StartGame.file = 1;
             }
             else
             {
-                file = 3;
+                StartGame.file = 3;
             }
         }
         private void btnSaveFile2_Click(object sender, RoutedEventArgs e)
@@ -74,11 +80,11 @@ namespace textbasedAdventure
             if (showHide.Continue == false)
             {
                 showHide.Overwrite();
-                file = 2;
+                StartGame.file = 2;
             }
             else
             {
-                file = 4;
+                StartGame.file = 4;
             }
         }
 
@@ -87,13 +93,13 @@ namespace textbasedAdventure
         private void btnYes_Click(object sender, RoutedEventArgs e)
         {
            
-            if (file == 1)
+            if (StartGame.file == 1)
             {
-                StartGame.File1();
+                StartGame.startGame(startHp, startMaxHp, startDam, startDef, startCoins, startPos, StartGame.file, this );
             }
-            else if (file == 2)
+            else if (StartGame.file == 2)
             {
-                StartGame.File2();
+                StartGame.startGame(startHp, startMaxHp, startDam, startDef, startCoins, startPos, StartGame.file, this);
             }
             showHide.Overwritehidden();
         }

@@ -146,7 +146,7 @@ namespace textbasedAdventure
 
         private void txtWin_MouseEnter(object sender,MouseEventArgs e)
         {
-            txtTutorial.Text = "you need to survive 10 moves until you have reached .....";
+            txtTutorial.Text = "you need to survive 10 moves until you have reached the mountain kingdom";
         }
 
         private void txtWin_MouseLeave(object sender,MouseEventArgs e)
