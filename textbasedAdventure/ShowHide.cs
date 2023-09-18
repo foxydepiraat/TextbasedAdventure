@@ -29,11 +29,15 @@ namespace textbasedAdventure
             mainWindow.btnSaveFile2.Visibility = Visibility.Visible;
             mainWindow.btnBack.Visibility = Visibility.Visible;
         }
+
+
         public void showContinue()
         {
             hideMenu();
-            Continue = true;
-            showStart();
+
+            mainWindow.btnContinue1.Visibility = Visibility.Visible;
+            mainWindow.btnContinue2.Visibility = Visibility.Visible;
+            mainWindow.btnBack.Visibility = Visibility.Visible;
         }
 
         public void Overwrite()

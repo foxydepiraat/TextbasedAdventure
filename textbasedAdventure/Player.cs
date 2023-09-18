@@ -6,25 +6,103 @@ using System.Threading.Tasks;
 
 namespace textbasedAdventure
 {
-    internal class Player
+    internal class Player 
     {
-        public string Name { get; set; }
-        public int Hp { get; set; }
-        public int MaxHp { get; set; }
-        public int Dam { get; set; } 
-        public int Def { get; set; }
-        public int Coins { get; set; }
-        public int Pos { get; set; }
-        public void playerStart(int hp, int maxhp, int dam, int def, int coins, int pos)
-        {
-            this.Name = "user";
-            this.Hp = hp;
-            this.MaxHp = maxhp;
-            this.Dam = dam;
-            this.Def = def;
-            this.Coins = coins;
-            this.Pos = pos;
 
+        
+        public string Name;
+        public int Hp;
+        public int MaxHp;
+        public int Dam;
+        public int Def;
+        public int Coins;
+        public int Pos;
+
+        
+
+        public void player()
+        {
+            Name = "username";
+            Hp = 20;
+            MaxHp = 20;
+            Dam = 5;
+            Def = 0;
+            Coins = 0;
+            Pos = 1;
+        }
+        public void player(string name, int hp, int maxhp, int dam, int def, int coins, int pos)
+        {
+            
+            Name = name;
+            Hp = hp;
+            MaxHp = maxhp;
+            Dam = dam;
+            Def = def;
+            Coins = coins;
+            Pos = pos;
+        }
+
+        public void setPlayerStats()
+        {
+            player();
+        }
+
+        public string GetName()
+        {
+            return Name;
+        }
+        
+
+        public int getHp()
+        {
+            return Hp;
+        }
+        public int getMaxHp()
+        {
+            return MaxHp;
+        }
+        public int getDam()
+        {
+            return Dam;
+        }
+        public int getDef()
+        {
+            return Def;
+        }
+        public int getCoins()
+        {
+            return Coins;
+        }
+
+        public int getPos()
+        {
+            return Pos;
+        }
+
+        public void setName(string name)
+        {
+            Name = name;
+        }
+
+        public void setCoins(int coins)
+        {
+            Coins = coins;
+        }
+        public void setHp(int hp)
+        {
+            Hp = hp;
+        }
+        public void setmaxHp(int maxhp)
+        {
+            MaxHp = maxhp;
+        }
+        public void setDam(int dam)
+        {
+            Dam = dam;
+        }
+        public void setDef(int def)
+        {
+            Def = def;
         }
     }
 }

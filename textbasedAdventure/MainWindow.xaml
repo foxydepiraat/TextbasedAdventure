@@ -43,6 +43,8 @@
             <Button x:Name="btnQuit" Content="QUIT" Grid.Column="1" Grid.Row="7" Click="btnQuit_Click" FontSize="20"/>
             <Button x:Name="btnSaveFile1" Content="SAVE FILE 1" Grid.Column="1" Grid.Row="1" Click="btnSaveFile1_Click" Visibility="Hidden" FontSize="20"/>
             <Button x:Name="btnSaveFile2" Content="SAVE FILE 2" Grid.Column="1" Grid.Row="3" Click="btnSaveFile2_Click" Visibility="Hidden" FontSize="20"/>
+            <Button x:Name="btnContinue1" Content="SAVE FILE 1" Grid.Column="1" Grid.Row="1" Click="btnContinue1_Click" Visibility="Hidden" FontSize="20"/>
+            <Button x:Name="btnContinue2" Content="SAVE FILE 2" Grid.Column="1" Grid.Row="3" Click="btnContinue2_Click" Visibility="Hidden" FontSize="20"/>
             <Button x:Name="btnBack" Content="BACK" Grid.Column="1" Grid.Row="5" Click="btnBack_Click" Visibility="Hidden" FontSize="20"/>
         </Grid>
         <Grid x:Name="mbYesNo" Grid.Column="1" Grid.Row="1" Background="LightGray" Visibility="Hidden">

@@ -153,5 +153,16 @@ namespace textbasedAdventure
         {
             txtTutorial.Text = Default;
         }
+        private void txtPos_MouseEnter(object sender,MouseEventArgs e)
+        {
+            txtTutorial.Text = "you need to survive 10 moves until you have reached the mountain kingdom";
+        }
+
+        private void txtPos_MouseLeave(object sender,MouseEventArgs e)
+        {
+            txtTutorial.Text = Default;
+        }
+
+        
     }
 }

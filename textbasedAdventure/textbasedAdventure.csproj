@@ -55,6 +55,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="EndScreen.xaml.cs">
+      <DependentUpon>EndScreen.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Player.cs" />
     <Compile Include="ShowHide.cs" />
     <Compile Include="StartGame.cs" />
@@ -64,6 +67,10 @@
     <Compile Include="WindowInfo.xaml.cs">
       <DependentUpon>WindowInfo.xaml</DependentUpon>
     </Compile>
+    <Page Include="EndScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

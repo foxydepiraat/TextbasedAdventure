@@ -17,16 +17,28 @@ namespace textbasedAdventure
     /// <summary>
     /// Interaction logic for txtAdventureGame.xaml
     /// </summary>
-    public partial class txtAdventureGame : Window
+    public partial class txtAdventureGame : Window 
     {
-        readonly StartGame startGame;
-        readonly Player player;
-        
-        int counterStory = 0;
+        Player player = new Player();
+        private bool NextPosition;
+        private int counterStory = 0;
+        private int counterBtn3 = 0;
+        private int ending;
         public txtAdventureGame()
         {
             InitializeComponent();
-            txtStory.Text = "What is your username";
+            player.setPlayerStats();
+            int hp = player.getHp();
+            int maxHp = player.getMaxHp();
+            txtHp.Text = hp + "/" + maxHp;
+            
+            txtDam.Text = player.getDam().ToString();
+            txtDef.Text = player.getDef().ToString();
+            txtCoins.Text = player.getCoins().ToString();
+            txtPos.Text = player.getPos().ToString();
+            txtCoins.Text = player.getCoins().ToString();
+            txtPos.Text = player.getCoins().ToString();
+            txtStory.Text = "What is your username:";
             btnOption1.Content = "Continue";
             btnOption2.Visibility = Visibility.Hidden;
             btnOption3.Visibility = Visibility.Hidden;
@@ -36,21 +48,58 @@ namespace textbasedAdventure
 
         public void btnOption1_Click(object sender, EventArgs e)
         {
+            counterStory++;
 
-           counterStory++;
-           if (counterStory ==1)
+            if (counterStory == 1)
             {
-                player.Name = txtStory.Text;
-                txtStory.Text = "We need your help Hero:" + player.Name + " and welcome to the Forrest Kingdom";
+                txtUsername.Text = txtInput.Text;
+                txtStory.Text = "We need your help " + txtUsername.Text + " to save us from the Mountain Kingdom our golden coins got stolen. ";
+                txtInput.Visibility = Visibility.Hidden; 
             }
-           else if(counterStory == 2)
-            {
 
+            else if (counterStory == 2)
+            {
+                btnOption1.Content = "YES";
+                btnOption3.Visibility = Visibility.Visible;
+                btnOption3.Content = "NO";
+            }
+            
+            else if (counterStory == 3)
+            {
+                counterBtn3++;
+                StartGame startgame = new StartGame();
+                startgame.btnMove(this);
             }
         }
 
-        
 
+        public void btnOption3_Click(object sender, EventArgs e)
+        {
+            if (counterBtn3 == 0)
+            {
+                counterBtn3++;
+                ending = 2;
+                EndScreen end = new EndScreen(ending);
+                end.Show();
+                this.Close();
+            }
+        }
 
+        public void btnOption4_Click(object sender, EventArgs e)
+        {
+            if( NextPosition == true)
+            {
+                player.getPos();
+            }
+        }
+
+        private void btnOption2_Click(object sender, RoutedEventArgs e)
+        {
+            if(btnOption2.Content == "Move Left")
+            {
+                StartGame startgame = new StartGame();
+                startgame.btnLeft();
+            }
+        }
     }
 }

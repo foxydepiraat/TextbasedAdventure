@@ -74,6 +74,8 @@
             <TextBlock Text="3" FontSize="30" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Grid.Row="3" />
             <TextBlock x:Name="txtCoins" Text="Golden Coins:" FontSize="30" TextAlignment="Center" HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Column="0"  Grid.Row="4" MouseEnter="txtCoins_MouseEnter" MouseLeave="txtCoins_MouseLeave" TextWrapping="Wrap"/>
             <TextBlock Text="3" FontSize="30" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Grid.Row="4" />
+            <TextBlock  x:Name="txtPos" Text="Position:" FontSize="30" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Grid.Row="5" Mouse.MouseEnter="txtPos_MouseEnter" Mouse.MouseLeave="txtPos_MouseLeave"/> 
+            <TextBlock  Text="4/10" FontSize="30" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Grid.Row="5"/>
         </Grid>
         <Grid Grid.ColumnSpan="3" Grid.RowSpan="4">
             <Grid.Background>

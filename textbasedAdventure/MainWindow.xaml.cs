@@ -20,16 +20,9 @@ namespace textbasedAdventure
     /// </summary>
     public partial class MainWindow : Window
     {
+        txtAdventureGame adventure = new txtAdventureGame();
         ShowHide showHide;
         StartGame StartGame = new StartGame();
-
-
-        private int startHp = 20;
-        private int startMaxHp = 20;
-        private int startDam = 5;
-        private int startDef = 0;
-        private int startCoins = 0;
-        private int startPos = 1;
 
         public MainWindow()
         {
@@ -64,28 +57,14 @@ namespace textbasedAdventure
 
         private void btnSaveFile1_Click(object sender, RoutedEventArgs e)
         { 
-            if(showHide.Continue == false)
-            {
-
                 showHide.Overwrite();
                 StartGame.file = 1;
-            }
-            else
-            {
-                StartGame.file = 3;
-            }
+            
         }
         private void btnSaveFile2_Click(object sender, RoutedEventArgs e)
         {
-            if (showHide.Continue == false)
-            {
                 showHide.Overwrite();
                 StartGame.file = 2;
-            }
-            else
-            {
-                StartGame.file = 4;
-            }
         }
 
         
@@ -95,11 +74,11 @@ namespace textbasedAdventure
            
             if (StartGame.file == 1)
             {
-                StartGame.startGame(startHp, startMaxHp, startDam, startDef, startCoins, startPos, StartGame.file, this );
+                StartGame.startGame( StartGame.file, this);
             }
             else if (StartGame.file == 2)
             {
-                StartGame.startGame(startHp, startMaxHp, startDam, startDef, startCoins, startPos, StartGame.file, this);
+                StartGame.startGame( StartGame.file, this);
             }
             showHide.Overwritehidden();
         }
@@ -119,6 +98,19 @@ namespace textbasedAdventure
             btnSaveFile1.Visibility = Visibility.Hidden;
             btnSaveFile2.Visibility = Visibility.Hidden;
             btnBack.Visibility = Visibility.Hidden;
+            btnContinue1.Visibility = Visibility.Hidden;
+            btnContinue2.Visibility = Visibility.Hidden;
         }
+
+        private void btnContinue1_Click(object sender, RoutedEventArgs e)
+        {
+            StartGame.file = 3;
+        }
+
+        private void btnContinue2_Click(object sender, RoutedEventArgs e)
+        {
+            StartGame.file = 4;
+        }
+
     }
 }
