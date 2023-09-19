@@ -104,5 +104,10 @@ namespace textbasedAdventure
         {
             Def = def;
         }
+
+        public void setpos(int pos)
+        {
+            Pos = pos;
+        }
     }
 }

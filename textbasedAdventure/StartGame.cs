@@ -9,19 +9,18 @@ namespace textbasedAdventure
 {
     internal class StartGame : txtAdventureGame
     {
-        txtAdventureGame adventure = new txtAdventureGame();
+        private txtAdventureGame txtAdventure = new txtAdventureGame();
         Player player = new Player();
         public int file;
-        
+        private int counter = 0;
         public bool overWrite;
-  
-
-        
 
         public void startGame(int file ,MainWindow main  )
         {
+            txtAdventureGame adventure = new txtAdventureGame();
             if (file ==1)
             {
+                
                 adventure.Show();
                 main.Close();
             }
@@ -71,6 +70,7 @@ namespace textbasedAdventure
 
         public void btnMove(txtAdventureGame adventure)
         {
+            txtAdventure = adventure;
             adventure.btnOption1.Content = "Search this area";
             adventure.btnOption2.Content = "Move Left";
             adventure.btnOption3.Content = "Move Foward";
@@ -81,108 +81,26 @@ namespace textbasedAdventure
             adventure.btnOption3.Visibility = Visibility.Visible;
             adventure.btnOption4.Visibility = Visibility.Visible;
         }
-
-
-        public void btnLeft()
+        
+        
+        public void searchMove( txtAdventureGame adventure)
         {
+            counter++;
             Random random = new Random();
-            int r = random.Next(1, 10);
+            int r = random.Next(1,10);
 
-            if (r == 1)
+            if(counter <=1)
             {
-                badMove(adventure);
-            }
-            else if (r == 2)
-            {
-                luckyMove(adventure);
-
-            }
-            else if (r >= 3)
-            {
-                normalMove(adventure);
-            }
-        }
-
-        private void badMove(txtAdventureGame adventure)
-        {
-            int pos = player.getPos();
-            Random random = new Random();
-            int r = random.Next(1, 3);
-            if(r == 1)
-            {
-                
-                if (pos != 0)
-                {
-                    pos--;
-                }
-                
-                adventure.txtStory.Text = "you had bad luck you lost your way so you went back when you know they way";
+                int coins = Convert.ToInt16(adventure.txtCoins.Text);
+                adventure.txtStory.Text = "you have search this here and found " + r + " golden coins.";
+                coins = coins + r;
+                player.setCoins(coins);
+                adventure.txtCoins.Text = coins.ToString();
             }
             else
             {
-                int coins = player.getCoins();
-                r = random.Next(1,5);
-                for(int i = 0; i <= r; i++)
-                {
-                    coins--;
-                    if (coins <= 0)
-                    {
-                        coins = 0;
-
-                    }
-                }
-                adventure.txtStory.Text = "your bag had an hole in it adn you have" + r + " some coins";
-                adventure.txtCoins.Text = coins.ToString();
-                
+                adventure.txtStory.Text = "you have already seacrhed this area";
             }
-
-            pos++;
-            adventure.txtPos.Text = pos.ToString() + " / 10";
-        }
-
-        private void luckyMove(txtAdventureGame adventureGame)
-        {
-            Random random = new Random();
-            int r = random.Next(10,15);
-            adventure.txtStory.Text = "you had insane luck and found some lost gold coins" + r +"to be exact";
-            int coins = player.getCoins();
-            coins += r;
-            adventure.txtCoins.Text = coins.ToString();
-
-            int pos = player.getPos();
-            pos++;
-            adventure.txtPos.Text = pos.ToString() + " / 10";
-        }
-
-        private void normalMove(txtAdventureGame adventureGame)
-        {
-            int coins = player.getCoins();
-            Random random = new Random();
-            int r = random.Next(1,3);
-            if (r == 1)
-            {
-                adventure.txtStory.Text = "you have moved fowards wihtout any trouble";
-            }
-            else if (r == 2)
-            {
-                r = random.Next(2,5);
-                
-                adventure.txtStory.Text = "you have travelled succesfull and found" + r + "coins";
-            }
-            else{
-                 
-            }
-            coins += r;
-            adventure.txtCoins.Text = coins.ToString();
-            int pos = player.getPos();
-            pos++;
-            adventure.txtPos.Text = pos.ToString() + " / 10";
-        }
-        
-        private void searchMove()
-        {
-            Random random = new Random();
-            int r = random.Next(1,5);
         }
     }
 }
