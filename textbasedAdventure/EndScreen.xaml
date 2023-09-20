@@ -9,6 +9,9 @@
         WindowState="Maximized"
         Title="MainWindow" Height="900" Width="1600">
     <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/forrestbkingdom.jpg"/>
+        </Grid.Background>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="3*"/>
@@ -19,8 +22,19 @@
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
+        <Grid x:Name="death" Grid.ColumnSpan="3" Grid.RowSpan="3" Visibility="Hidden">
+            <Grid.Background>
+                <ImageBrush ImageSource="/deathEnding.jpg"/>
+            </Grid.Background>
 
-        <Grid Grid.Row="1" Grid.Column="1" Background="LightGray">
+        </Grid>
+        <Grid x:Name="coward" Grid.ColumnSpan="3" Grid.RowSpan="3" Visibility="Hidden">
+            <Grid.Background>
+                <ImageBrush ImageSource="/cowardednding.jpg"/>
+            </Grid.Background>
+
+        </Grid>
+        <Grid  Grid.Row="2" Grid.Column="1" Background="#FF7EE985">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="1*"/>
                 <ColumnDefinition Width="2*"/>
@@ -34,7 +48,7 @@
                 <RowDefinition Height="2*"/>
             </Grid.RowDefinitions>
             <TextBlock x:Name="txtEndings" Grid.Column="1" Grid.Row="1" FontSize="25" TextWrapping="Wrap"/>
-            <Button x:Name="btnContinue" Content="Back To Home" Grid.Column="1" Grid.Row="3" FontSize="20" Click="btnContinue_Click"/>
+            <Button x:Name="btnContinue" Content="Back To Home" Grid.Column="1" Grid.Row="3" FontSize="20" Click="btnContinue_Click" Background="#FF56CFDD"/>
         </Grid>
     </Grid>
 </Window>

@@ -24,15 +24,17 @@ namespace textbasedAdventure
             InitializeComponent();
             if (ending == 1)
             {
-                txtEndings.Text = "The good ending you ahve saved the forest kingdom adn got all there stolen golden coins back ending 1/3";
+                txtEndings.Text = "The good ending you have saved the forest kingdom adn got all there stolen golden coins back ending 1/3";
             }
             else if (ending == 2)
             {
                 txtEndings.Text = "The coward ending you said no to help the inhabitants of the forest kingdom ending 2/3";
+                coward.Visibility = Visibility.Visible;
             }
             else if (ending == 3)
             {
-                txtEndings.Text = "The dead ending you died and dissapointed the forrest kingdom ending 3/3";
+                txtEndings.Text = "The dead ending you died and dissapointed the forest kingdom ending 3/3";
+                death.Visibility = Visibility.Visible;
             }
             
         }

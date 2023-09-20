@@ -104,12 +104,12 @@ namespace textbasedAdventure
 
         private void btnContinue1_Click(object sender, RoutedEventArgs e)
         {
-            StartGame.file = 3;
+            StartGame.ContinueGame(1);
         }
 
         private void btnContinue2_Click(object sender, RoutedEventArgs e)
         {
-            StartGame.file = 4;
+            StartGame.ContinueGame(2);
         }
 
     }

@@ -12,7 +12,7 @@ namespace textbasedAdventure
         private txtAdventureGame txtAdventure = new txtAdventureGame();
         Player player = new Player();
         public int file;
-        private int counter = 0;
+        public int counter = 0;
         public bool overWrite;
 
         public void startGame(int file ,MainWindow main  )
@@ -31,15 +31,26 @@ namespace textbasedAdventure
             }
         }
 
-        public void ContinueGame(int file, MainWindow main)
+        public void ContinueGame(int file)
         {
-            if( file == 3)
+            if( file == 1)
             {
                 getData(file);
             }
-            else if( file == 4)
+            else if( file == 2)
             {
                 getData(file);
+            }
+        }
+        public void saveGame( txtAdventureGame adventure)
+        {
+            if (file == 1)
+            {
+
+            }
+            else if(file ==2)
+            {
+
             }
         }
         
@@ -75,32 +86,16 @@ namespace textbasedAdventure
             adventure.btnOption2.Content = "Move Left";
             adventure.btnOption3.Content = "Move Foward";
             adventure.btnOption4.Content = "Move Right";
+            adventure.btnShop.Content = "SHOP"; 
+           
             adventure.btnShop.Visibility = Visibility.Visible;
             adventure.btnOption1.Visibility = Visibility.Visible;
             adventure.btnOption2.Visibility = Visibility.Visible;
             adventure.btnOption3.Visibility = Visibility.Visible;
             adventure.btnOption4.Visibility = Visibility.Visible;
+            adventure.btnShop.Visibility = Visibility.Visible;
+            adventure.btnBack.Visibility = Visibility.Visible;
         }
         
-        
-        public void searchMove( txtAdventureGame adventure)
-        {
-            counter++;
-            Random random = new Random();
-            int r = random.Next(1,10);
-
-            if(counter <=1)
-            {
-                int coins = Convert.ToInt16(adventure.txtCoins.Text);
-                adventure.txtStory.Text = "you have search this here and found " + r + " golden coins.";
-                coins = coins + r;
-                player.setCoins(coins);
-                adventure.txtCoins.Text = coins.ToString();
-            }
-            else
-            {
-                adventure.txtStory.Text = "you have already seacrhed this area";
-            }
-        }
     }
 }

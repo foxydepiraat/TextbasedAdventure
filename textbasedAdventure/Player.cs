@@ -17,10 +17,11 @@ namespace textbasedAdventure
         public int Def;
         public int Coins;
         public int Pos;
+        public bool Alive;
 
         
 
-        public void player()
+        public Player()
         {
             Name = "username";
             Hp = 20;
@@ -30,9 +31,9 @@ namespace textbasedAdventure
             Coins = 0;
             Pos = 1;
         }
-        public void player(string name, int hp, int maxhp, int dam, int def, int coins, int pos)
+        public Player(string name, int hp, int maxhp, int dam, int def, int coins, int pos, bool alive)
         {
-            
+            Alive = alive;
             Name = name;
             Hp = hp;
             MaxHp = maxhp;
@@ -42,10 +43,6 @@ namespace textbasedAdventure
             Pos = pos;
         }
 
-        public void setPlayerStats()
-        {
-            player();
-        }
 
         public string GetName()
         {
@@ -79,6 +76,11 @@ namespace textbasedAdventure
             return Pos;
         }
 
+        public bool getAlive()
+        {
+            return Alive;
+        }
+
         public void setName(string name)
         {
             Name = name;
@@ -108,6 +110,11 @@ namespace textbasedAdventure
         public void setpos(int pos)
         {
             Pos = pos;
+        }
+
+        public void setAlive(bool alive)
+        {
+            Alive = alive;
         }
     }
 }
