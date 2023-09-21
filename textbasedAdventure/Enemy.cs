@@ -162,12 +162,19 @@ namespace textbasedAdventure
                 }
                 else if (r > 6)
                 {
+                    
                     int PHp = player.getHp();
                     int pmaxHp = player.getMaxHp();
                     PHp -= Dam;
                     player.setHp(PHp);
                     adventure.txtHp.Text = PHp + "/" + pmaxHp;
                     adventure.txtStory.Text = String.Format("the enemy has {0} remaining health", Hp);
+                    if (PHp <= 0)
+                    {
+                        EndScreen end = new EndScreen(3);
+                        end.Show();
+                        adventure.Close();
+                    }
                 }
             }
         }
