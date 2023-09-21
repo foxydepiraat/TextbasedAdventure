@@ -33,7 +33,7 @@ namespace textbasedAdventure
             }
             else if (ending == 3)
             {
-                txtEndings.Text = "The dead ending you died and dissapointed the forest kingdom ending 3/3";
+                txtEndings.Text = "The dead ending you died and disappointed the forest kingdom ending 3/3";
                 death.Visibility = Visibility.Visible;
             }
             

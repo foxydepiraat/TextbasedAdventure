@@ -289,7 +289,7 @@ namespace textbasedAdventure
             else if (shops == 2)
             {
                 coins = Convert.ToInt16(txtCoins.Text);
-                if (coins >= DefCost)
+                if (coins >= HpCost)
                 {
                     int hp = player.getHp();
                     int maxhp = player.getMaxHp();
